@@ -1,6 +1,6 @@
 {
-    "name": "js/my-simple-theme",
-    "description": "my-simple-theme",
+    "name": "food-day",
+    "description": "food-day",
     "type": "automad-package",
     "keywords": ["theme"],
     "license": "MIT",
