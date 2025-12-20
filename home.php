@@ -87,9 +87,9 @@
 			</div>
 		</div>
 
-		<span class="infoBoxList">
-			@{ +infoBoxNews }
-		</span>
+
+		@{ +infoBoxNews }
+
 
 
 	</section>
