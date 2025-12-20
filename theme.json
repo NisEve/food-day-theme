@@ -2,6 +2,9 @@
 	"name": "Food Day Theme",
 	"version": "1.0.0",
 	"description": "Theme für die Food Day Website",
+	"provides": {
+		"templates": true
+	},
 	"masks": {
 		"page": [
 			"home",
