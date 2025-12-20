@@ -1,10 +1,10 @@
 {
-    "name": "nisev/food-day-theme",
+	"name": "nisev/food-day-theme",
 	"description": "Food Day Theme für Automad CMS",
 	"type": "automad-theme",
-    "keywords": ["theme"],
-    "license": "MIT",
-    "require": {
+	"keywords": ["automad", "theme"],
+	"license": "MIT",
+	"require": {
 		"automad/package": "^1.0"
-    }
+	}
 }
