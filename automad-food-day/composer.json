@@ -1,0 +1,10 @@
+{
+    "name": "js/my-simple-theme",
+    "description": "my-simple-theme",
+    "type": "automad-package",
+    "keywords": ["theme"],
+    "license": "MIT",
+    "require": {
+        "automad/package-installer": "^1.1 || dev-master"
+    }
+}

@@ -1,0 +1,208 @@
+@use "breakpoints" as *;
+
+//am-block, am-stretched, am-buttons ... automad classes - overwrite automad styles
+
+
+
+.dateOverview {
+	h1 {
+		font-size: 2.6rem;
+	}
+
+	h3 {
+		font-size: 2rem;
+	}
+}
+
+
+
+
+section.plainTextContentSection {
+	padding: 32px 32px 0;
+
+	@include mobile-up {
+		padding: 64px 48px;
+	}
+
+	 > div {
+		margin: 0 auto;
+		max-width: 700px;
+
+	}
+
+	h2, h3 {
+		margin-bottom: 0.4rem;
+		margin-top: 2rem;
+	}
+
+	p {
+		margin-bottom: 1.25rem;
+	}
+}
+
+// Global Sections & Pages
+.homeSection, section.am-block, .pageIntroSection, .pageContentSection {
+	display: flex;
+	flex-flow: column;
+	padding: 32px;
+	gap: 64px;
+
+	&.plainTextIntroSection {
+		padding: 32px 32px 0;
+	}
+
+	@include mobile-up {
+		padding: 64px 48px;
+
+		&.plainTextIntroSection {
+			padding: 64px 48px 0;
+		}
+	}
+
+}
+
+.pageIntroSection {
+	background: var(--color-section-green);
+
+	h1 {
+		font-size: 3rem;
+		margin-bottom: 64px;
+		@include desktop {
+			font-size: 3.5rem;
+			//font-size: 4.125rem;
+			margin: 40px 0 90px;
+		}
+	}
+
+	&.plainTextIntroSection h1 {
+		margin-bottom: 30px;
+		@include desktop {
+			margin: 40px 0 40px;
+		}
+	}
+
+
+	.pageIntroDates, .pageIntroPlaintText {
+		margin: 0 auto;
+		@include desktop {
+			max-width: var(--section-max-width);
+		}
+		> div {
+			@include desktop {
+				display: flex;
+				flex-flow: column;
+				justify-self: center;
+				width: 700px;
+			}
+		}
+	}
+
+
+	.pageIntroDates, .pageIntro, .pageIntroPlaintText {
+
+		h1 {
+			text-align: center;
+			@include desktop {
+				text-align: left;
+			}
+		}
+
+		h2 {
+			font-size: 2.25rem;
+			margin-bottom: 24px;
+			text-align: center;
+			@include desktop {
+				text-align: left;
+			}
+		}
+
+		p {
+			font-size: 1.3rem;
+			line-height: 145%;
+			margin-bottom: 44px;
+			text-align: center;
+			@include desktop {
+				text-align: left;
+				margin-right: 24px;
+			}
+		}
+	}
+
+
+
+	.pageIntro {
+		display: flex;
+		flex-flow: column;
+		gap: 20px;
+
+		&.imgRight {
+			flex-flow: column-reverse;
+		}
+
+		@include desktop {
+			gap: 48px;
+			flex-flow: row;
+			&.imgRight {
+				flex-flow: row;
+			}
+		}
+
+		> div {
+			display: inline-flex;
+			flex-flow: column;
+			justify-content: center;
+		}
+
+		figure {
+			width: 100%;
+			margin-bottom: 32px;
+
+			@include mobile-up {
+				width: 30%;
+				min-width: 30%;
+				margin-bottom: 0;
+				display: flex;
+				justify-content: center;
+			}
+
+			img {
+				border-radius: var(--img-border-radius);
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
+	.pageIntroPlaintText h2 {
+		font-size: 2rem;
+		margin-top: 24px;
+	}
+}
+
+// Components & Overwrites
+am-stretched {
+	margin: 0 !important;
+
+	&:nth-child(even) {
+		background: var(--color-white);
+	}
+
+	&:nth-child(odd) {
+		background: var(--color-section-green);
+	}
+
+	> section > am-layout-section {
+		padding: 0;
+	}
+}
+
+section.am-block {
+	h2 {
+		font-size: 2rem;
+	}
+
+	p {
+		font-size: 1.1rem;
+		line-height: 155%;
+	}
+}

@@ -1,0 +1,109 @@
+@use "colors" as *;
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+html {
+	font-size: 16px;
+}
+
+.karla-SemiBold {
+	font-family: "Karla", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+}
+
+.karla-Bold {
+	font-family: "Karla", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+}
+
+
+.karla-ExtraBold {
+	font-family: "Karla", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 800;
+	font-style: normal;
+}
+
+.ibm-plex-sans-regular {
+	font-family: "IBM Plex Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+}
+
+.ibm-plex-sans-medium {
+	font-family: "IBM Plex Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+}
+
+.ibm-plex-sans-semiBold {
+	font-family: "IBM Plex Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+}
+
+.ibm-plex-sans-Bold {
+	font-family: "IBM Plex Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+}
+
+
+:root {
+	--font-family-primary: "IBM Plex Sans", sans-serif;
+
+	--font-family-secondary: "Karla", sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Karla", sans-serif;
+	font-weight: 800;
+	letter-spacing: -2px;
+	line-height: 110%;
+	color: var(--color-dark-gray);
+	//color: var(--color-primary);
+}
+
+p {
+	font-family: "IBM Plex Sans", sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 145%;
+	color: var(--color-dark-gray);
+}
+
+a {
+	font-family: "IBM Plex Sans", sans-serif;
+	font-weight: 500;
+	line-height: 145%;
+	color: var(--color-highlight);
+}
+
+.plainTextSection {
+
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 0.6rem;
+		margin-top: 2rem;
+	}
+		p {
+		margin-bottom: 1rem;
+	}
+}

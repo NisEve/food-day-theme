@@ -1,0 +1,341 @@
+@use "breakpoints" as *;
+
+//am-block, am-stretched, am-buttons ... automad classes - overwrite automad styles
+
+// Sections Base
+section, am-stretched {
+	display: flex;
+	flex-flow: column;
+	gap: 64px;
+
+	@include desktop {
+		gap: 48px;
+	}
+}
+
+
+section > div, section > am-block {
+	margin: 0 auto;
+	display: flex;
+	flex-flow: column;
+	gap: 32px;
+	width: 100%;
+	max-width: var(--section-max-width);
+
+}
+
+//Home Section
+#home {
+	section:nth-child(odd) {
+		background: var(--color-white);
+	}
+
+	section:nth-child(even) {
+		background: var(--color-section-green);
+	}
+
+	am-buttons.am-block {
+		margin: 0;
+	}
+}
+
+
+// Hero Section
+#hero {
+	display: flex;
+	flex-flow: column-reverse;
+	margin: 0 auto 48px;
+	gap: 32px;
+	max-width: var(--section-max-width);
+
+	@include desktop {
+		flex-flow: row;
+		gap: 48px;
+	}
+
+
+	.heroText {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
+		padding: 0 24px;
+
+		gap: 0;
+
+		@include largeMobile-tablet-only {
+			padding: 0 48px;
+		}
+
+		@include desktop {
+			align-items: flex-start;
+			width: 50%;
+			padding: 0;
+		}
+
+		.btn {
+			@include largeTablet-down {
+				align-self: center;
+			}
+		}
+	}
+
+	h1, h2, p {
+		text-align: center;
+		color: var(--color-primary);
+		line-height: 110%;
+
+		@include desktop {
+			text-align: left;
+			line-height: 120%;
+		}
+	}
+
+	h1 {
+		font-size: 3.55rem;
+		margin-bottom: 12px;
+		@include desktop {
+			margin-bottom: 0;
+		}
+	}
+
+	h2 {
+		font-size: 2.5rem;
+		margin-bottom: 32px;
+	}
+
+	p {
+		font-size: 1.5rem;
+		margin-bottom: 52px;
+		color: inherit;
+	}
+
+
+	figure {
+		@include largeTablet-down {
+			display: flex;
+			justify-content: center;
+			background: var(--color-acent-beige);
+			width: 100%;
+			max-width: inherit;
+
+		}
+
+		@include desktop {
+			width: 50%;
+			max-width: 580px;
+		}
+
+		img {
+			width: 70%;
+			height: auto;
+
+			@include tablet-only {
+				width: 55%;
+			}
+
+			@include desktop {
+				border-radius: var(--img-border-radius);
+				width: 100%;
+			}
+		}
+	}
+
+	@include largeTablet-down {
+		.btn, am-buttons.am-block {
+			justify-content: center;
+		}
+	}
+}
+
+//Teaser Section
+
+.teaserSection {
+	padding: 40px 0;
+
+	> div {
+		max-width: var(--section-max-width);
+		padding: 32px;
+
+		@include desktop {
+			padding: 0;
+		}
+	}
+
+}
+
+//Paage Intros
+
+//w/img
+.pageIntroSection {
+	background: var(--color-section-green);
+
+	> div {
+		padding: 32px;
+
+		@include desktop {
+			padding: 48px 0;
+		}
+	}
+
+
+	h1 {
+		font-size: 3rem;
+		text-align: center;
+		margin-bottom: 64px;
+		@include desktop {
+			font-size: 3.5rem;
+			margin: 40px 0 90px;
+			text-align: left;
+		}
+	}
+
+
+	h2 {
+		font-size: 2.25rem;
+		margin-bottom: 24px;
+		text-align: center;
+		@include desktop {
+			text-align: left;
+		}
+	}
+
+	p {
+		font-size: 1.3rem;
+		line-height: 145%;
+		margin-bottom: 44px;
+		text-align: center;
+		@include desktop {
+			text-align: left;
+			margin-right: 24px;
+		}
+	}
+
+
+	.pageIntro {
+		display: flex;
+		flex-flow: column;
+		gap: 20px;
+
+		&.imgRight {
+			flex-flow: column-reverse;
+		}
+
+		@include desktop {
+			gap: 48px;
+			flex-flow: row;
+			&.imgRight {
+				flex-flow: row;
+			}
+		}
+
+		> div {
+			display: inline-flex;
+			flex-flow: column;
+			justify-content: center;
+		}
+
+		figure {
+			width: 100%;
+			margin-bottom: 32px;
+
+			@include mobile-up {
+				width: 30%;
+				min-width: 30%;
+				margin-bottom: 0;
+				display: flex;
+				justify-content: center;
+			}
+
+			img {
+				border-radius: var(--img-border-radius);
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+//Plain Text Section
+
+.plainTextIntroSection {
+	.pageIntroPlaintText {
+		width: 100%;
+		padding-bottom: 0;
+
+		h1 {
+			margin-bottom: 1.5rem;
+		}
+
+		.am-block {
+			max-width: 100%;
+		}
+	}
+}
+
+.plainTextSection {
+	padding: 32px;
+
+	@include desktop {
+		padding: 40px 0;
+	}
+
+
+	> div {
+		max-width: 800px;
+	}
+
+	ul {
+		padding-left: 20px;
+	}
+}
+
+.pageDatesSection {
+	> div {
+		padding: 32px;
+
+		@include desktop {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+	}
+}
+
+
+// Components & Overwrites
+am-stretched {
+	margin: 0 !important;
+
+	&:nth-child(even) {
+		background: var(--color-white);
+	}
+
+	&:nth-child(odd) {
+		background: var(--color-section-green);
+	}
+
+	> section > am-layout-section {
+	}
+}
+
+section.am-block {
+	padding-top: 32px;
+	padding-bottom: 32px;
+
+	@include desktop {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+
+
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	p {
+		font-size: 1.1rem;
+		line-height: 155%;
+	}
+}
