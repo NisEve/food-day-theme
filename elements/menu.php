@@ -1,3 +1,5 @@
+<?php defined('AUTOMAD') or die('Direct access not permitted!'); ?>
+
 <#
 The menu is based on a simple recursive snippet.
 #>

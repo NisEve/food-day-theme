@@ -1,3 +1,5 @@
+<?php defined('AUTOMAD') or die('Direct access not permitted!'); ?>
+
 <footer class="page-layout__footer">
 	<div class="page-layout__footer__inner">
 

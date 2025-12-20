@@ -1,3 +1,5 @@
+<?php defined('AUTOMAD') or die('Direct access not permitted!'); ?>
+
 <header class="page-layout__header">
 	<div class="page-layout__header__inner">
 		<a href="/" class="logoLink" aria-label="Food Day Homepage">

@@ -1,3 +1,5 @@
+
+<?php defined('AUTOMAD') or die('Direct access not permitted!'); ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
