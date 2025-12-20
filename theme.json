@@ -1,38 +1,5 @@
 {
-	"name": "Food Day Seevetal Theme",
-	"description": "Theme für die Food Day Website",
+	"name": "Food Day Theme",
 	"version": "1.0.0",
-	"author": "Nis Evers",
-	"license": "MIT",
-	"masks": {
-		"page": [
-			"home",
-			"page",
-			"aktuelles",
-			"annahme",
-			"spenden"
-		],
-		"shared": [
-			"+IntroHeadline",
-			"+teaserLinkAbholung",
-			"+teaserLinkNeuigkeiten",
-			"+teaserLinkSpenden",
-			"+teaserLinkUeberUns",
-			"+textAktuelles",
-			"+BildHero",
-			"+BildIntro",
-			"+BildTeaserAbholung",
-			"+BildTeaserNeuigkeiten",
-			"+BildTeaserSpenden",
-			"+infoBoxAbholung",
-			"+infoBoxSpendenAnnahme",
-			"+infoBoxNews",
-			"textAktuelles",
-			"+BlocksSeitenInhalt",
-			"+BlocksIntroInhalt",
-			"+BlocksTerminInhalt"
-		]
-	},
-	"tooltips": {
-	}
+	"description": "Theme für die Food Day Website"
 }

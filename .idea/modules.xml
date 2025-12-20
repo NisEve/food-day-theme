@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/food-day-theme.iml" filepath="$PROJECT_DIR$/food-day-theme.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tepmplates/tepmplates.iml" filepath="$PROJECT_DIR$/tepmplates/tepmplates.iml" />
     </modules>
   </component>
 </project>
