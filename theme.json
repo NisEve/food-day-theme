@@ -1,6 +1,7 @@
 {
-	"name": "food-day-seevetal",
-	"description": "Food Day Seevetal Theme",
+	"name": "Food Day Seevetal Theme",
+	"description": "Theme für die Food Day Website",
+	"version": "1.0.0",
 	"author": "Nis Evers",
 	"license": "MIT",
 	"masks": {
