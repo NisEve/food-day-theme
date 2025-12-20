@@ -4,36 +4,5 @@
 	"description": "Theme für die Food Day Website",
 	"provides": {
 		"templates": true
-	},
-	"masks": {
-		"page": [
-			"home",
-			"page",
-			"aktuelles",
-			"annahme",
-			"spenden"
-		],
-		"shared": [
-			"+IntroHeadline",
-			"+teaserLinkAbholung",
-			"+teaserLinkNeuigkeiten",
-			"+teaserLinkSpenden",
-			"+teaserLinkUeberUns",
-			"+textAktuelles",
-			"+BildHero",
-			"+BildIntro",
-			"+BildTeaserAbholung",
-			"+BildTeaserNeuigkeiten",
-			"+BildTeaserSpenden",
-			"+infoBoxAbholung",
-			"+infoBoxSpendenAnnahme",
-			"+infoBoxNews",
-			"textAktuelles",
-			"+BlocksSeitenInhalt",
-			"+BlocksIntroInhalt",
-			"+BlocksTerminInhalt"
-		]
-	},
-	"tooltips": {
 	}
 }
