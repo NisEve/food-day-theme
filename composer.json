@@ -3,8 +3,5 @@
 	"description": "Food Day Theme für Automad CMS",
 	"type": "automad-theme",
 	"keywords": ["automad", "theme"],
-	"license": "MIT",
-	"require": {
-		"automad/package": "^1.0"
-	}
+	"license": "MIT"
 }
