@@ -2,7 +2,7 @@
 <header class="page-layout__header">
 
 	<div class="skip-to-links">
-		<a href="#main" class="skip-to" tabindex="3" target="_self" style="top: -133px">Inhalt</a>
+		<a href="#main" class="skip-to" target="_self" style="top: -133px">Inhalt</a>
 	</div>
 
 	<div class="page-layout__header__inner">
