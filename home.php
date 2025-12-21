@@ -1,3 +1,5 @@
+<?php defined('AUTOMAD') or die('Direct access not permitted!'); ?>
+
 <@ elements/header.php @>
 <@ elements/navbar.php @>
 <main class="container home" id="main">
@@ -86,7 +88,7 @@
 		</div>
 
 
-			@{ +infoBoxNews }
+		@{ +infoBoxNews }
 
 
 
