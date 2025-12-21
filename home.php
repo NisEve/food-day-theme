@@ -1,6 +1,6 @@
 <@ elements/header.php @>
 <@ elements/navbar.php @>
-<main class="container" id="home main">
+<main class="container home" id="main">
 
 
 	<section id="hero">
