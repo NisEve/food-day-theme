@@ -15,7 +15,7 @@
 			</p>
 			@{ +teaserLinkUeberUns | def ('Mehr über Uns') }
 		</div>
-		@{ +BildHero | def ('Hero Bild Food Day') }
+		<span class="bgHeroImg">@{ +BildHero | def ('Hero Bild Food Day') }</span>
 
 	</section>
 
