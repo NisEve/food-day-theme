@@ -10,14 +10,18 @@
 		<@ elements/metatags.php @>
 	<?php } ?>
 
-	<link rel="stylesheet" href="@{ theme }/assets/css/main.min.css">
-	<script src="@{ theme }/assets/js/main.min.js" defer></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<link rel="stylesheet" href="/packages/food-day/automad-food-day/public/css/main.min.css">
+	<script src="/packages/food-day/automad-food-day/public/js/main.min.js" defer></script>
 
 	<@ elements/favicons.php @>
 
 
 </head>
 <body>
+
 
 
 
