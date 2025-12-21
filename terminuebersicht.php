@@ -1,11 +1,9 @@
-<?php defined('AUTOMAD') or die('Direct access not permitted!'); ?>
-
 <@ elements/header.php @>
 <body>
 
 <@ elements/navbar.php @>
 
-<main class="dateOverview">
+<main class="dateOverview main">
 
 	<section class="pageIntroSection plainTextIntroSection">
 

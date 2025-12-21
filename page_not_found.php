@@ -1,11 +1,9 @@
-<?php defined('AUTOMAD') or die('Direct access not permitted!'); ?>
-
 <@ elements/header.php @>
 <body>
 
 <@ elements/navbar.php @>
 
-<main>
+<main id="main">
 	<section class="pageIntroSection plainTextIntroSection">
 
 		<div class="pageIntroPlaintText">
