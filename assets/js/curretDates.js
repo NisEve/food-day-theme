@@ -8,9 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			today.setHours(0, 0, 0, 0);
 
 			const formatDateHuman = (dateObj) => {
-				const today = new Date();
-				today.setHours(0, 0, 0, 0);
-
 				const check = new Date(dateObj);
 				check.setHours(0, 0, 0, 0);
 
@@ -31,8 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				return base;
 			};
 
-
-			const formatTimeDE = (start, end) =>
+			const formatTimeHuman = (start, end) =>
 				`${start.replace(":", ".")}–${end.replace(":", ".")} Uhr`;
 
 			document.querySelectorAll(".infoBox[data-type]").forEach(box => {
@@ -46,25 +42,48 @@ document.addEventListener("DOMContentLoaded", () => {
 					.filter(t => t.d >= today)
 					.sort((a, b) => a.d - b.d)[0];
 
-				const dateEl = box.querySelector(".date");
-				const timeEl = box.querySelector(".time");
+				const dateTimeEl = box.querySelector(".date time");
+				const timeTimeEl = box.querySelector(".time time");
+				const timeWrapper = box.querySelector(".time");
 
-				// 🛟 Fallback
+				// 🛟 Fallback: kein Termin
 				if (!next) {
-					dateEl.textContent = "Zurzeit kein Termin geplant";
-					timeEl.textContent = "";
-					timeEl.hidden = true;
+					dateTimeEl.textContent = "Zurzeit kein Termin geplant";
+					dateTimeEl.removeAttribute("datetime");
+					timeWrapper.hidden = true;
 					return;
 				}
 
-				dateEl.textContent = formatDateHuman(next.d);
+				/* ======================
+				   📅 Datum
+				====================== */
+
+				const isoDate = next.d.toISOString().split("T")[0];
+				dateTimeEl.setAttribute("datetime", isoDate);
+				dateTimeEl.textContent = formatDateHuman(next.d);
+
+				/* ======================
+				   🕒 Uhrzeit
+				====================== */
 
 				if (next.start && next.end) {
-					timeEl.hidden = false;
-					timeEl.textContent = formatTimeDE(next.start, next.end);
+					const startISO = next.start;
+					const endISO = next.end;
+
+					timeWrapper.hidden = false;
+
+					timeTimeEl.setAttribute(
+						"datetime",
+						`${startISO}/${endISO}`
+					);
+
+					timeTimeEl.textContent =
+						formatTimeHuman(next.start, next.end);
+
 				} else {
-					timeEl.textContent = "";
-					timeEl.hidden = true;
+					timeWrapper.hidden = true;
+					timeTimeEl.textContent = "";
+					timeTimeEl.removeAttribute("datetime");
 				}
 			});
 		})

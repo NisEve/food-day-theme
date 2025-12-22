@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
+
 	if (burger && navi && closeNavi) {
 		burger.addEventListener("click", () => {
 			const isOpen = navi.classList.contains("open");

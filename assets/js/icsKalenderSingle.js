@@ -88,10 +88,10 @@ document.addEventListener("DOMContentLoaded", () => {
 					// ♿ Status & UX
 					if (status) {
 						status.textContent =
-							`Kalender „${title}“ wurde heruntergeladen.`;
+							`Kalendereinträge „${title}“ wurden heruntergeladen.`;
 					}
 
-					button.textContent = "Kalender heruntergeladen";
+					button.textContent = "Kalendereinträge heruntergeladen";
 					button.disabled = true;
 					button.setAttribute("aria-disabled", "true");
 				});

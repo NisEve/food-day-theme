@@ -2,4 +2,5 @@
 import "./icsKalenderAll.js";
 import "./curretDates.js";
 import "./allDatesList";
-import "./navi.js"
+import "./naviMobile.js";
+import "./naviDesktop.js";
