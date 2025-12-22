@@ -38,7 +38,7 @@ The menu is based on a simple recursive snippet.
 			<@ foreach in pagelist @>
 			<li>
 				<a href="@{ url }"
-				<@ if @{ :current } @>class="has-background-dark has-text-white"<@ end @>
+				<@ if @{ :current } @>class="current"<@ end @>
 				>
 				@{ title }
 				</a>
