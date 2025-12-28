@@ -28,6 +28,7 @@
 		</div>
 
 	</section>
+	<div class="wave introWave" aria-hidden="true"></div>
 
 	<section class="pageSection pageDatesSection">
 
