@@ -17,7 +17,10 @@
 		</div>
 		<span class="bgHeroImg">@{ +BildHero | def ('Hero Bild Food Day') }</span>
 
+
 	</section>
+
+	<div class="wave" aria-hidden="true"></div>
 
 	<!-- Abholung -->
 
