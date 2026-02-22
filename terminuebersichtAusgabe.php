@@ -18,7 +18,7 @@
 					type="button"
 					class="subscribeCalendar"
 					data-calendar-source="pickup"
-					data-calendar-title="Food Day Ausgabetermine">
+					data-calendar-title="Food Day Ausgabe">
 					Termine herunterladen und im Kalender speichern
 				</button>
 

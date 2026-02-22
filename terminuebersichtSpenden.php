@@ -18,7 +18,7 @@
 					type="button"
 					class="subscribeCalendar"
 					data-calendar-source="donation"
-					data-calendar-title="Food Day Spendentermine">
+					data-calendar-title="Food Day Spendentermin">
 					Termine herunterladen und im Kalender speichern
 				</button>
 
