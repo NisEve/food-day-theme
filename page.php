@@ -15,7 +15,7 @@
 				@{ +BildIntro }
 				<div>
 					<h2>@{ IntroHeadline | def ('Intro Headline') }</h2>
-					<p>@{ IntroText | def ('Einleitender Info Text') }
+					<p>@{ IntroText | markdown }
 					</p>
 				</div>
 			</div>
