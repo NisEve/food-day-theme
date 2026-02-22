@@ -48,8 +48,12 @@ a, button {
 	width: 1px;
 }
 
+.hidden {
+	display: none;
+	visibility: hidden;
+}
 
-//No scroll Buregr Navi open
+//No scroll Burger Navi open
 .no-scroll {
 	overflow: hidden;
 	height: 100%;
