@@ -8,7 +8,7 @@
 	<div class="page-layout__header__inner">
 		<a href="/" class="logoLink" aria-label="Food Day Homepage">
 
-		<img src="/packages/niseve/food-day-theme/assets/img/logo-head.png" alt="Food Day Logo" class="logo" width="231" height="auto">
+		<img src="/packages/niseve/food-day-theme/assets/images/logo-head.png" alt="Food Day Logo" class="logo" width="231" height="auto">
 
 		</a>
 
