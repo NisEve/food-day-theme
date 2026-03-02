@@ -1,0 +1,45 @@
+:root {
+	color-scheme: light dark;
+	--color-primary: #355E3B;
+	--color-secondary: #A4C58C;
+
+	--color-highlight: #C84A3D;
+	--color-acent-yellow: #f7c873;
+	--color-acent-beige: #EBAC9A;
+
+	--color-dark-gray: #1f1f1f;
+	--color-black: #000000;
+	--color-white: #ffffff;
+
+	--color-nav-hover: #fdebcd;
+	--color-focus: #007aff;
+
+	--color-section-green: rgba(164, 197, 140, 0.14);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		color-scheme: dark;
+
+		/* Grundfarben */
+		--color-primary: #8FBF9A;        /* helleres, entsättigtes Grün */
+		--color-secondary: #5F7F66;      /* dunkleres Grün für Flächen */
+
+		/* Akzente */
+		--color-highlight: #E36A5C;      /* warmes Rot, gut sichtbar auf dunkel */
+		--color-acent-yellow: #b37600;   /* weniger grell als im Light Mode */
+		--color-acent-beige: #C98E7D;
+
+		/* Neutrale Farben */
+		--color-dark-gray: #e4e4e4;      /* Textfarbe */
+		--color-black: #f3f3f3;          /* Haupt-Hintergrund */
+		--color-white: #1A1F1C;          /* Cards / Sektionen */
+
+		/* Navigation & Interaction */
+		--color-nav-hover: #24352A;      /* dezenter Hover */
+		--color-focus: #6FB7FF;          /* klar sichtbar, a11y-safe */
+
+		/* Sektionen */
+		--color-section-green: rgba(143, 191, 154, 0.16);
+	}
+}
