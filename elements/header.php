@@ -10,11 +10,11 @@
 		<@ elements/metatags.php @>
 	<?php } ?>
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<!--<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
-	<!--<link rel="stylesheet" href="/packages/niseve/food-day-theme/public/css/main.min.css">
+	<link rel="stylesheet" href="/packages/niseve/food-day-theme/public/css/main.min.css">
 	<script src="/packages/niseve/food-day-theme/public/js/main.min.js" defer></script>-->
 
 	<@ elements/favicons.php @>
