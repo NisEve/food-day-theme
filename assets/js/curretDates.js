@@ -43,14 +43,20 @@ document.addEventListener("DOMContentLoaded", () => {
 					.sort((a, b) => a.d - b.d)[0];
 
 				const dateTimeEl = box.querySelector(".date time");
-				const timeTimeEl = box.querySelector(".time time");
 				const timeWrapper = box.querySelector(".time");
+				const timeTimeEl = box.querySelector(".time time");
+				const locationEl = box.querySelector(".locationText");
+				const locationWrapper = box.querySelector(".location");
 
-				// 🛟 Fallback: kein Termin
+				/* ======================
+				   🛟 Fallback
+				====================== */
+
 				if (!next) {
 					dateTimeEl.textContent = "Zurzeit kein Termin geplant";
 					dateTimeEl.removeAttribute("datetime");
 					timeWrapper.hidden = true;
+					locationWrapper.hidden = true;
 					return;
 				}
 
@@ -67,23 +73,29 @@ document.addEventListener("DOMContentLoaded", () => {
 				====================== */
 
 				if (next.start && next.end) {
-					const startISO = next.start;
-					const endISO = next.end;
-
 					timeWrapper.hidden = false;
-
 					timeTimeEl.setAttribute(
 						"datetime",
-						`${startISO}/${endISO}`
+						`${next.start}/${next.end}`
 					);
-
 					timeTimeEl.textContent =
 						formatTimeHuman(next.start, next.end);
-
 				} else {
 					timeWrapper.hidden = true;
 					timeTimeEl.textContent = "";
 					timeTimeEl.removeAttribute("datetime");
+				}
+
+				/* ======================
+				   📍 Ort
+				====================== */
+
+				if (next.location) {
+					locationWrapper.hidden = false;
+					locationEl.textContent = next.location;
+				} else {
+					locationWrapper.hidden = true;
+					locationEl.textContent = "";
 				}
 			});
 		})

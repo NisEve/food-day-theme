@@ -1,75 +1,133 @@
-document.querySelectorAll("#mainNavi li").forEach(li => {
-	const link = li.querySelector(":scope > a");
-	if (!link) return;
+const desktopQuery = window.matchMedia("(min-width: 1024px)");
 
-	const submenu = li.querySelector(":scope > ul");
+function initDesktopMenu() {
+	document.querySelectorAll("#mainNavi li").forEach(li => {
+		// Verhindert doppeltes Initialisieren
+		if (li.dataset.desktopInit === "true") return;
 
-	/* Wrapper immer (für sauberes Markup / Layout) */
-	const wrapper = document.createElement("div");
-	wrapper.className = "menu-item";
-	link.before(wrapper);
-	wrapper.appendChild(link);
+		const link = li.querySelector(":scope > a");
+		if (!link) return;
 
-	/* ❗ Nur wenn Submenü existiert */
-	if (!submenu) return;
+		const submenu = li.querySelector(":scope > ul");
 
-	li.classList.add("has-submenu");
-	submenu.hidden = true;
+		/* Wrapper immer */
+		const wrapper = document.createElement("div");
+		wrapper.className = "menu-item";
+		link.before(wrapper);
+		wrapper.appendChild(link);
 
-	/* Button */
-	const button = document.createElement("button");
-	button.type = "button";
-	button.className = "submenu-toggle";
-	button.innerHTML = `<span aria-hidden="true">▾</span>`;
-
-	/* ARIA */
-	button.setAttribute("aria-haspopup", "true");
-	button.setAttribute("aria-expanded", "false");
-	button.setAttribute(
-		"aria-label",
-		`Untermenü ${link.textContent.trim()} öffnen`
-	);
-
-	wrapper.appendChild(button);
-
-
-
-	/* Click */
-	button.addEventListener("click", () => {
-		const open = button.getAttribute("aria-expanded") === "true";
-		button.setAttribute("aria-expanded", String(!open));
-		submenu.hidden = open;
-		li.classList.toggle("is-open", !open);
-	});
-
-	/* Keyboard: Enter / Space */
-	button.addEventListener("keydown", e => {
-		if (e.key === "Enter" || e.key === " ") {
-			e.preventDefault();
-			button.click();
-			submenu.querySelector("a")?.focus();
+		/* Nur wenn Submenü existiert */
+		if (!submenu) {
+			li.dataset.desktopInit = "true";
+			return;
 		}
-	});
 
-	/* Keyboard: Escape */
-	li.addEventListener("keydown", e => {
-		if (e.key === "Escape" && !submenu.hidden) {
-			button.setAttribute("aria-expanded", "false");
-			submenu.hidden = true;
-			li.classList.remove("is-open");
-			button.focus();
+		li.classList.add("has-submenu");
+		submenu.hidden = true;
+
+		/* Button */
+		const button = document.createElement("button");
+		button.type = "button";
+		button.className = "submenu-toggle";
+		button.innerHTML = `<span aria-hidden="true">▾</span>`;
+
+		/* ARIA */
+		button.setAttribute("aria-haspopup", "true");
+		button.setAttribute("aria-expanded", "false");
+		button.setAttribute(
+			"aria-label",
+			`Untermenü ${link.textContent.trim()} öffnen`
+		);
+
+		wrapper.appendChild(button);
+
+		/* Click */
+		const onClick = () => {
+			const open = button.getAttribute("aria-expanded") === "true";
+			button.setAttribute("aria-expanded", String(!open));
+			submenu.hidden = open;
+			li.classList.toggle("is-open", !open);
+		};
+
+		button.addEventListener("click", onClick);
+
+		/* Keyboard: Enter / Space */
+		const onButtonKeydown = e => {
+			if (e.key === "Enter" || e.key === " ") {
+				e.preventDefault();
+				onClick();
+				submenu.querySelector("a")?.focus();
+			}
+		};
+		button.addEventListener("keydown", onButtonKeydown);
+
+		/* Keyboard: Escape */
+		const onLiKeydown = e => {
+			if (e.key === "Escape" && !submenu.hidden) {
+				button.setAttribute("aria-expanded", "false");
+				submenu.hidden = true;
+				li.classList.remove("is-open");
+				button.focus();
+			}
+		};
+		li.addEventListener("keydown", onLiKeydown);
+
+		/* Focusout */
+		const onFocusOut = e => {
+			if (!li.contains(e.relatedTarget)) {
+				button.setAttribute("aria-expanded", "false");
+				submenu.hidden = true;
+				li.classList.remove("is-open");
+			}
+		};
+		li.addEventListener("focusout", onFocusOut);
+
+		/* Referenzen für Cleanup merken */
+		li._desktopMenu = {
+			wrapper,
+			button,
+			submenu,
+			handlers: { onClick, onButtonKeydown, onLiKeydown, onFocusOut }
+		};
+
+		li.dataset.desktopInit = "true";
+	});
+}
+
+function destroyDesktopMenu() {
+	document.querySelectorAll("#mainNavi li").forEach(li => {
+		if (li.dataset.desktopInit !== "true") return;
+
+		const data = li._desktopMenu;
+		const link = li.querySelector(":scope > .menu-item > a");
+
+		// Wrapper zurückbauen
+		if (data?.wrapper && link) {
+			data.wrapper.before(link);
+			data.wrapper.remove();
 		}
-	});
 
-	li.addEventListener("focusout", e => {
-		// Element, das jetzt Fokus bekommt
-		const nextFocus = e.relatedTarget;
-
-		// Wenn Fokus komplett außerhalb des <li> geht → schließen
-		if (!li.contains(nextFocus)) {
-			button.setAttribute("aria-expanded", "false");
-			submenu.hidden = true;
-			li.classList.remove("is-open");
+		// Submenu zurücksetzen
+		if (data?.submenu) {
+			data.submenu.hidden = false;
 		}
+
+		li.classList.remove("has-submenu", "is-open");
+		delete li._desktopMenu;
+		delete li.dataset.desktopInit;
 	});
-});
+}
+
+function handleBreakpoint(e) {
+	if (e.matches) {
+		initDesktopMenu();
+	} else {
+		destroyDesktopMenu();
+	}
+}
+
+// Initial
+handleBreakpoint(desktopQuery);
+
+// Bei Resize
+desktopQuery.addEventListener("change", handleBreakpoint);

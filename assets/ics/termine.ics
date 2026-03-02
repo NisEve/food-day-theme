@@ -230,8 +230,8 @@ UID:abholung-20261216@verein.de
 DTSTAMP:20251201T090000Z
 DTSTART:20261216T103000
 DTEND:20261216T120000
-SUMMARY:Abholtermin
-DESCRIPTION:Food Day - Abholung
+SUMMARY:Ausgabetermin
+DESCRIPTION:Food Day - Ausgabe
 LOCATION:Helbach-Haus Bürgermeister-Heitmann-Straße 34c 21217 Seevetal
 END:VEVENT
 

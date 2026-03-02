@@ -8,9 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			today.setHours(0, 0, 0, 0);
 
 			const formatDateHuman = (dateObj) => {
-				const today = new Date();
-				today.setHours(0, 0, 0, 0);
-
 				const check = new Date(dateObj);
 				check.setHours(0, 0, 0, 0);
 
@@ -27,10 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 				if (diffDays === 0) return `Heute · ${base}`;
 				if (diffDays === 1) return `Morgen · ${base}`;
-
 				return base;
 			};
-
 
 			const formatTimeDE = (start, end) =>
 				`${start.replace(":", ".")}–${end.replace(":", ".")} Uhr`;
@@ -52,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
 						const li = document.createElement("li");
 						li.className = "dateItem";
 
-						// ⭐ ERSTER ZUKÜNFTIGER TERMIN
 						if (!nextMarked) {
 							li.classList.add("is-next");
 							li.setAttribute("aria-current", "date");
@@ -67,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 							<p class="date infoIcon">
 								<time datetime="${t.date}">
-								${formatDateHuman(t.d)}
+									${formatDateHuman(t.d)}
 								</time>
 							</p>
 
@@ -75,6 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
 								<span class="visually-hidden">Uhrzeit:</span>
 								${formatTimeDE(t.start, t.end)}
 							</p>
+
+							${t.location ? `
+							<p class="location infoIcon">
+								<span class="visually-hidden">Ort:</span>
+								${t.location}
+							</p>` : ""}
 						`;
 
 						list.appendChild(li);
