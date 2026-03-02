@@ -34,7 +34,7 @@ The menu is based on a simple recursive snippet.
 		<@ snippet navigation @>
 
 		<@ if @{ :pagelistCount } @>
-		<ul class="menu-list" style="display: none">
+		<ul class="menu-list">
 			<@ foreach in pagelist @>
 			<li>
 				<a href="@{ url }"
